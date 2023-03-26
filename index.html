@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Registro de Producto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulario del Producto</h1>
+      <form id="contacto-formulario" action="./confirmacion.html">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Código</label>
+          <input type="text" class="form-control" id="nombre" name="codigo" placeholder="Ingresa el código del producto" required>
+        </div>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Descripcíon</label>
+            <input type="text" class="form-control" id="Descripcíon" name="Descripcíon" placeholder="Ingresa una Descripcíon del producto" required>
+          </div>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Código de barras</label>
+            <input type="text" class="form-control" id="codigoDeBarras" name="codigoDeBarras" placeholder="Ingresa el código de barras" required>
+          </div>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Precio Unitario</label>
+            <input type="text" class="form-control" id="PrecioUnitario" name="PrecioUnitario" placeholder="Ingrese el precio Unitario del producto" required>
+          </div>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Stock</label>
+            <input type="text" class="form-control" id="Stock" name="Stock" placeholder="Intrese el numero de Stock del producto" required>
+          </div>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Proveedor</label>
+            <input type="text" class="form-control" id="proveedor" name="proveedor" placeholder="Ingrese el nombre del Proveedor del producto" required>
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="estado" name="estado" required>
+            <label class="form-check-label" for="estado">Estado</label>
+          </div>
+          <div class="mb-3">
+            <label for="opciones" class="form-label">Categoria</label>
+            <select class="form-select" id="opciones" name="opciones" required>
+              <option value="">Selecciona una opción</option>
+              <option value="opcion1">Categoria 1</option>
+              <option value="opcion2">Categoria 2</option>
+              <option value="opcion3">Categoria 3</option>
+            </select>
+          </div>
+       
+        <button type="submit" class="btn btn-primary" id="enviar-btn" disabled>Enviar</button>
+        <button type="reset" class="btn btn-secondary">Cancelar envío</button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const formulario = document.getElementById('contacto-formulario');
+      const botonEnviar = document.getElementById('enviar-btn');
+      
+      formulario.addEventListener('input', () => {
+        if (formulario.checkValidity()) {
+          botonEnviar.removeAttribute('disabled');
+        } else {
+          botonEnviar.setAttribute('disabled', 'true');
+        }
+      });
+    </script>
+  </body>
+</html>
